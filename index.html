@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Finde den echten Brief</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      position: relative;
+      width: 100%;
+      max-width: 1000px;
+      margin: auto;
+    }
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hotspot {
+      position: absolute;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="klasse.png" alt="Klassenzimmer">
+
+    <!-- Positionen der Flaschen (angepasst an dein Bild) -->
+    <div class="hotspot" style="top: 73%; left: 22%; width: 4%; height: 7%;" onclick="playAudio('niete1.mp3')"></div>
+    <div class="hotspot" style="top: 30%; left: 52%; width: 9%; height: 11%;" onclick="playAudio('niete2.mp3')"></div>
+    <div class="hotspot" style="top: 59%; left: 3%; width: 5%; height: 6%;" onclick="playAudio('brief.mp3')"></div>
+    <div class="hotspot" style="top: 66%; left: 70%; width: 7%; height: 9%;" onclick="playAudio('niete3.mp3')"></div>
+  </div>
+
+  <audio id="player" src=""></audio>
+
+  <script>
+    function playAudio(file) {
+      const player = document.getElementById('player');
+      player.src = file;
+      player.play();
+    }
+  </script>
+</body>
+</html>
